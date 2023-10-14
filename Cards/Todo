@@ -1,0 +1,27 @@
+
+To do list
+    1    color class ✅
+    2    animating the charts
+    3    future transaction to happen in exact date, not when i press add transaction!
+    4    local notification stuff
+    5    deleting transactions both from now and future
+        ◦    if past transaction is deleted the money comes back
+    
+    6    setting stuff
+    7    editing a card turns off the bookmarkStatus ✅
+    8    going directly to a CardDetailView from the mainView
+    9    ---
+    10   numerating stuff ✅
+    11   deleting a card should also delte it's future transactions ✅
+    12   animated selectedTab change in ContentView
+    13   launchscreen image not shown ✅
+    14   add icon ✅
+    15   dark/light✅
+    16   tabBar color
+    
+    ------------------------------------------------------------------------------------
+    What to be shown in setting
+    
+    
+
+

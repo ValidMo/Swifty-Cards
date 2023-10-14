@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName="Card" syncable="YES">
+        <attribute name="alpha" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="blue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="bookmarkStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="green" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="iban" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="red" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="cardToTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="transactionToCard" inverseEntity="Transaction"/>
+        <relationship name="cardToTransactionInFuture" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionInFuture" inverseName="transactionInFutureToCard" inverseEntity="TransactionInFuture"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notificationStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="transactionToCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="cardToTransaction" inverseEntity="Card"/>
+    </entity>
+    <entity name="TransactionInFuture" representedClassName="TransactionInFuture" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notificationStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="transactionInFutureToCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="cardToTransactionInFuture" inverseEntity="Card"/>
+    </entity>
+</model>
