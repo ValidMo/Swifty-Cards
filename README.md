@@ -33,9 +33,9 @@ Record transactions associated with each card
 View a detailed transaction history for each card
 
 # Screenshots
+<img src="https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882" alt="Image 1" width="200">
+<img src="https://github.com/ValidMo/Cards/assets/63536756/6fb80274-f1d5-4bbb-8b7f-54ec552c3542" alt="Image 2" width="200">
+<img src="https://github.com/ValidMo/Cards/assets/63536756/e80f5402-f416-4269-88b0-07cd041f7421" alt="Image 3" width="200">
+<img src="https://github.com/ValidMo/Cards/assets/63536756/fff32675-4cc5-40dc-ab4d-bff7d819bcfd" alt="Image 4" width="200">
+<img src="https://github.com/ValidMo/Cards/assets/63536756/d7f56550-337a-4ab6-9a2f-e24fade70f5d" alt="Image 5" width="200">
 
-<img src="[/Images/your-image-file.jpg](https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882)" alt="Alt Text" width="400">
-![image](https://github.com/ValidMo/Cards/assets/63536756/6fb80274-f1d5-4bbb-8b7f-54ec552c3542)
-![image](https://github.com/ValidMo/Cards/assets/63536756/e80f5402-f416-4269-88b0-07cd041f7421)
-![image](https://github.com/ValidMo/Cards/assets/63536756/fff32675-4cc5-40dc-ab4d-bff7d819bcfd)
-![image](https://github.com/ValidMo/Cards/assets/63536756/d7f56550-337a-4ab6-9a2f-e24fade70f5d)
