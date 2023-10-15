@@ -34,8 +34,8 @@ View a detailed transaction history for each card
 
 # Screenshots
 
-![Simulator Screen Shot - iPhone 14 Pro - 2023-10-15 at 09 15 13](https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-10-15 at 09 15 21](https://github.com/ValidMo/Cards/assets/63536756/6fb80274-f1d5-4bbb-8b7f-54ec552c3542)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-10-15 at 09 21 39](https://github.com/ValidMo/Cards/assets/63536756/e80f5402-f416-4269-88b0-07cd041f7421)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-10-15 at 09 15 49](https://github.com/ValidMo/Cards/assets/63536756/fff32675-4cc5-40dc-ab4d-bff7d819bcfd)
-![Simulator Screen Shot - iPhone 14 Pro - 2023-10-15 at 09 16 35](https://github.com/ValidMo/Cards/assets/63536756/d7f56550-337a-4ab6-9a2f-e24fade70f5d)
+![image](https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882)
+![image](https://github.com/ValidMo/Cards/assets/63536756/6fb80274-f1d5-4bbb-8b7f-54ec552c3542)
+![image](https://github.com/ValidMo/Cards/assets/63536756/e80f5402-f416-4269-88b0-07cd041f7421)
+![image](https://github.com/ValidMo/Cards/assets/63536756/fff32675-4cc5-40dc-ab4d-bff7d819bcfd)
+![image](https://github.com/ValidMo/Cards/assets/63536756/d7f56550-337a-4ab6-9a2f-e24fade70f5d)
