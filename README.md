@@ -5,7 +5,7 @@ An app using SwiftUI and CoreData frameworks, to manage personal bank cards.
 # Overview
 This repository contains a simple iOS app built using Swift, SwiftUI, and CoreData.
 
-The main purpose of this project is to demonstrate my knowledge about Swift programming language and the use of SwiftUI and CoreData frameworks
+The main purpose of this project is to demonstrate my knowledge about Swift programming language, SwiftUI and CoreData frameworks
 to create a basic card management application. Throughout this project, gained valuable insights into
 dataflow, attributes in SwiftUI, data persistence, custom function creation, and data modeling.
 
