@@ -34,7 +34,7 @@ View a detailed transaction history for each card
 
 # Screenshots
 
-![image](<img src="[/Images/your-image-file.jpg](https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882)" alt="Alt Text" width="400">)
+![image]<img src="[/Images/your-image-file.jpg](https://github.com/ValidMo/Cards/assets/63536756/3be2e11f-6c32-4b45-ae57-8dde6bcce882)" alt="Alt Text" width="400">
 ![image](https://github.com/ValidMo/Cards/assets/63536756/6fb80274-f1d5-4bbb-8b7f-54ec552c3542)
 ![image](https://github.com/ValidMo/Cards/assets/63536756/e80f5402-f416-4269-88b0-07cd041f7421)
 ![image](https://github.com/ValidMo/Cards/assets/63536756/fff32675-4cc5-40dc-ab4d-bff7d819bcfd)
