@@ -1,5 +1,6 @@
 # Cards
-An app written with SwiftUI and CoreData frameworks, to manage personal bank Cards.
+
+An app using SwiftUI and CoreData frameworks, to manage personal bank cards.
 
 # Overview
 This repository contains a simple iOS app built using Swift, SwiftUI, and CoreData.
