@@ -14,13 +14,13 @@ Data Flow: The project provided an opportunity to explore data flow concepts in 
 
 Attributes: The project involved working with various SwiftUI attributes.
 
-Modifiers: The project involved working with various SwiftUI modifiers.
-
 Data Persistence: CoreData framework was used to implement data persistence, allowing users to store and manage their card and transaction data securely.
 
 Custom Functions: Created some custom functions to enhance the app's functionality, demonstrating the ability to extend SwiftUI to meet specific requirements.
 
 Data Modeling: Models for card and transaction data were designed and implemented, gaining valuable experience in structuring data for efficient management.
+
+Modifiers: The project involved working with various SwiftUI modifiers.
 
 # About the App
 
