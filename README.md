@@ -1,4 +1,4 @@
-# Cards
+# Swifty Cards
 
 An app using SwiftUI and CoreData frameworks, to manage personal bank cards.
 
@@ -25,7 +25,7 @@ Modifiers: The project involved working with various SwiftUI modifiers.
 
 # About the App
 
-The Cards app is a practical tool designed to help users manage their cards and related transactions. It simplifies the process of keeping track of cards by allowing users to:
+The Swifty Cards app is a practical tool designed to help users manage their cards and related transactions. It simplifies the process of keeping track of cards by allowing users to:
 
 Add, edit, and delete card entries
 
