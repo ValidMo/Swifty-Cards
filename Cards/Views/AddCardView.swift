@@ -14,6 +14,7 @@ struct AddCardView: View {
     @State private var iban: String = ""
     @State private var moneyInString: String = ""
     @State private var color: Color = .gray
+    @State private var isBookMarked = false
 
     @Binding var AccountAddedNotification: Bool
     
@@ -41,43 +42,40 @@ struct AddCardView: View {
                             }
                         })
                     
-                     
-                        
-                    
                     TextField("Card Number", text: $number)
                         .customTextField()
                         .keyboardType(.decimalPad)
-                                .onChange(of: number) { newValue in
-                                    
-                                    // Remove all spaces from the card number
-                                    let strippedNumber = number.replacingOccurrences(of: " ", with: "")
-                                    
-                                    if strippedNumber.count > 16 {
-                                        
-                                        let tranquatedNumber = String(strippedNumber.prefix(16))
-                                        // Add a space after every 4 digits
-                                        let formattedNumber = stride(from: 0, to: tranquatedNumber.count, by: 4).map {
-                                            let startIndex = strippedNumber.index(tranquatedNumber.startIndex, offsetBy: $0)
-                                            let endIndex = tranquatedNumber.index(startIndex, offsetBy: 4, limitedBy: tranquatedNumber.endIndex) ?? tranquatedNumber.endIndex
-                                            return String(tranquatedNumber[startIndex..<endIndex])
-                                        }.joined(separator: " ")
-                                        
-                                        // Update the card number with the formatted version
-                                        number = formattedNumber
-                                    }
-                                    
-                                    else {
-                                        let formattedNumber = stride(from: 0, to: strippedNumber.count, by: 4).map {
-                                            let startIndex = strippedNumber.index(strippedNumber.startIndex, offsetBy: $0)
-                                            let endIndex = strippedNumber.index(startIndex, offsetBy: 4, limitedBy: strippedNumber.endIndex) ?? strippedNumber.endIndex
-                                            return String(strippedNumber[startIndex..<endIndex])
-                                        }.joined(separator: " ")
-                                        
-
-                                        number = formattedNumber
-                                    }
-                                }
-                       
+                        .onChange(of: number) { newValue in
+                            
+                            // Remove all spaces from the card number
+                            let strippedNumber = number.replacingOccurrences(of: " ", with: "")
+                            
+                            if strippedNumber.count > 16 {
+                                
+                                let tranquatedNumber = String(strippedNumber.prefix(16))
+                                // Add a space after every 4 digits
+                                let formattedNumber = stride(from: 0, to: tranquatedNumber.count, by: 4).map {
+                                    let startIndex = strippedNumber.index(tranquatedNumber.startIndex, offsetBy: $0)
+                                    let endIndex = tranquatedNumber.index(startIndex, offsetBy: 4, limitedBy: tranquatedNumber.endIndex) ?? tranquatedNumber.endIndex
+                                    return String(tranquatedNumber[startIndex..<endIndex])
+                                }.joined(separator: " ")
+                                
+                                // Update the card number with the formatted version
+                                number = formattedNumber
+                            }
+                            
+                            else {
+                                let formattedNumber = stride(from: 0, to: strippedNumber.count, by: 4).map {
+                                    let startIndex = strippedNumber.index(strippedNumber.startIndex, offsetBy: $0)
+                                    let endIndex = strippedNumber.index(startIndex, offsetBy: 4, limitedBy: strippedNumber.endIndex) ?? strippedNumber.endIndex
+                                    return String(strippedNumber[startIndex..<endIndex])
+                                }.joined(separator: " ")
+                                
+                                
+                                number = formattedNumber
+                            }
+                        }
+                    
                     TextField("IBAN Number", text: $iban)
                         .customTextFieldForIBAN()
                         .onChange(of: iban, perform: { newValue in
@@ -102,10 +100,9 @@ struct AddCardView: View {
                                 iban = formattedIban
                             }
                         }
-                      
+                                  
                         )
-
-                   
+                    
                     TextField("$123.45", text: $moneyInString)
                         .customTextField()
                         .keyboardType(.decimalPad)
@@ -113,23 +110,30 @@ struct AddCardView: View {
                             // Remove all non-digit characters from the input
                             var sanitizedInput = moneyInString.filter { $0.isNumber || $0 == "." }
                             if let dotIndex = sanitizedInput.firstIndex(of: ".") {
-                                    let decimalDigits = sanitizedInput[dotIndex...].dropFirst()
-                                    if decimalDigits.count > 3 {
-                                        sanitizedInput = String(sanitizedInput.prefix(upTo: dotIndex)) + "." + decimalDigits.prefix(2 + 1)
-                                    }
+                                let decimalDigits = sanitizedInput[dotIndex...].dropFirst()
+                                if decimalDigits.count > 3 {
+                                    sanitizedInput = String(sanitizedInput.prefix(upTo: dotIndex)) + "." + decimalDigits.prefix(2 + 1)
                                 }
-
+                            }
+                            
                             moneyInString = sanitizedInput
-                    }
-                       
+                        }
+                }
+                Divider()
+                VStack(spacing: 15){
+                    
+                    Toggle("Bookmark this card?", isOn: $isBookMarked)
+                        .customToggleField()
+                    
                     
                     //MARK: - The ColorPicker and the preview of card
                     ColorPicker(selection: $color, supportsOpacity: false) {
                         ZStack{
                             Rectangle()
-                                .frame(width: 120, height: 92)
+                                .frame(width: 140, height: 102)
                                 .cornerRadius(24)
-                                .padding()
+                                .padding(.trailing, 20)
+                                .padding(.leading, 20)
                                 .foregroundColor(color)
                             VStack(spacing: 10){
                                 Text(name)
@@ -146,16 +150,17 @@ struct AddCardView: View {
                             
                         }
                     }
+                    
+                    .padding(.trailing, 35)
                 }
+                    
                
-//                
-//                Spacer()
-//                
+                Divider()
                 
                 //MARK: - Adding the card
                 Button("Done") {
                     
-                    DataController().addCard(name: name, number: number, iban: iban, money: StringToDoubleForMoney( moneyInString: moneyInString), bookmarkStatus: false, color: color, context: managedObjectContext)
+                    DataController().addCard(name: name, number: number, iban: iban, money: StringToDoubleForMoney( moneyInString: moneyInString), bookmarkStatus: isBookMarked, color: color, context: managedObjectContext)
                     AccountAddedNotification = true
                     presentationMode.wrappedValue.dismiss()
 
@@ -173,6 +178,27 @@ struct AddCardView: View {
             .padding(.all)
         }
 
+}
+
+
+
+struct AddCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddCardView(AccountAddedNotification: .constant(false))
+    }
+}
+
+extension Toggle {
+    func customToggleField() -> some View {
+        return self
+            .foregroundColor(Color.gray.opacity(0.7))
+           .padding(.trailing, 20)
+            .padding(.leading, 20)
+            .font(.custom("Aldrich-Regular", size: 20))
+           .frame(width: 350, height: 40)
+           
+        
+    }
 }
 
 

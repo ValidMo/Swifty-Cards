@@ -12,7 +12,7 @@ struct AboutUsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        Text("Hi my name is Noyan, and this in my project for resume :)")
+        Text("Hi my name is Noyan, you can visit my website https://noyan.me ")
     }
 }
 

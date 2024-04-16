@@ -18,7 +18,7 @@ extension TextField {
             .padding(.leading, 20)
             .font(.custom("Aldrich-Regular", size: 28))
             .disableAutocorrection(true)
-            .frame(width: 350, height: 80)
+            .frame(width: 340, height: 78)
             
             .background(
             RoundedRectangle(cornerRadius: 24)
@@ -33,7 +33,7 @@ extension TextField {
             .padding(.leading, 20)
             .font(.custom("Aldrich-Regular", size: 17))
             .disableAutocorrection(true)
-            .frame(width: 350, height: 80)
+            .frame(width: 340, height: 78)
             
             .background(
             RoundedRectangle(cornerRadius: 24)
@@ -41,6 +41,7 @@ extension TextField {
                 .shadow(color: Color.gray.opacity(0.4), radius: 10, x: 5, y: 5)
             )
     }
+    
 }
 
 
@@ -55,9 +56,22 @@ extension Text {
     func customtextForAddForMainView() -> some View {
         return self
             .font(.custom("Aldrich-Regular", size: 10))
-            .foregroundColor(.primary)
+            .foregroundColor(.white)
     }
 }
+    /*
+extension Toggle {
+    func customToggleField() -> some View {
+        return self
+            .foregroundColor(Color.gray.opacity(0.7))
+            .padding(.leading, 20)
+            .font(.custom("Aldrich-Regular", size: 14))
+           .frame(width: 350, height: 50)
+           
+        
+    }
+}
+     */
 
 //MARK: - Functions
 

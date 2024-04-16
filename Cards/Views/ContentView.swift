@@ -35,7 +35,6 @@ struct ContentView: View {
             }
             .tag(1)
         
-            
             AllCardsView(
                 TransactionDoneNotification: $TransactionDoneNotification,
                 AccountEditedNotification: $CardEditedNotification,
@@ -54,7 +53,6 @@ struct ContentView: View {
             .tag(3)
   
             }
-            
             
             .overlay(
                 VStack{

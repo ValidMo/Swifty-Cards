@@ -32,11 +32,11 @@ struct YesterdaysTransactionsView: View {
                                     Text(transaction.transactionToCard?.name ?? "")
                                         .foregroundColor(.secondary)
                                         .font(.custom("Aldrich-Regular", size: 12))
-                                    if let date = transaction.date {
-                                    Text(dateToString(date: date))
+                                    
+                                    Text(dateToString(date: transaction.date))
                                         .foregroundColor(.secondary)
                                         .font(.custom("Aldrich-Regular", size: 12))
-                                         }
+                                         
                                 }
                                 .padding()
                                 Spacer()

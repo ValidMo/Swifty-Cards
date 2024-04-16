@@ -98,23 +98,14 @@ struct MainView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack{
                                 if(bookmarked.isEmpty){
-                                    ZStack{
-                                        Rectangle()
-                                            .frame(width: 180, height: 125)
-                                            .cornerRadius(24)
-                                            .foregroundColor(Color.primary)
-                                            .shadow(color:.gray, radius: 4,x: 0, y:0)
-                                        
-                                        Button {
-                                            withAnimation(.easeInOut){
-                                                selectedTab = 2 //change the tab smoothly
-                                            }
-                                        } label: {
-                                            Image(systemName: "plus.circle")
-                                                .foregroundColor(.primary)
+                                    blankBookmarkView()
+                                        .onTapGesture {
+                                            showAddAcount.toggle()
+                                        }
+                                        .sheet(isPresented: $showAddAcount) {
+                                            AddCardView(AccountAddedNotification: $AccountAddedNotification)
                                         }
                                         
-                                    }
                                 }
                                 else{
                                     ForEach(bookmarked){ card in
@@ -136,7 +127,7 @@ struct MainView: View {
                                                         .customtextForAddForMainView()
                                                     Text(card.iban ?? "")
                                                         .font(.custom("Aldrich-Regular", size: 8))
-                                                        .foregroundColor(.primary)
+                                                        .foregroundColor(.white)
                                                     let editedMoneyText = textCorrectorWithPoint(text: String(card.money))
                                                     
                                                     Text(String(editedMoneyText))
@@ -269,4 +260,21 @@ struct MainView: View {
 
 }
 
+struct blankBookmarkView: View {
+    
+    var body: some View {
+        ZStack{
+            
+            Rectangle()
+                .frame(width: 180, height: 125)
+                .cornerRadius(24)
+                .foregroundColor(Color.gray)
+                .shadow(color:.gray, radius: 4,x: 0, y:0)
+            
+                Image(systemName: "plus.circle")
+                    .foregroundColor(.white)
+        }
+    }
+    
+}
 
