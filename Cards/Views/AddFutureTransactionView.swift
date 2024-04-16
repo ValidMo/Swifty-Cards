@@ -13,6 +13,8 @@ struct AddFutureTransactionView: View {
     @State var addDescription: String = ""
     @Environment(\.presentationMode) var presentationMode
     
+    @State private var notificationAuthorizationStatus: UNAuthorizationStatus = .notDetermined
+    
 
     var body: some View {
         VStack(spacing: 45){
@@ -54,9 +56,19 @@ struct AddFutureTransactionView: View {
                         Toggle("Remind me!", isOn: $notificationState)
                             .labelsHidden()
                             .onChange(of: notificationState) { _ in
-                                NotificationManager.notificationManager.requestAutorization()
+                                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+                                    DispatchQueue.main.async {
+                                        // Update notificationState based on the authorization status
+                                        if granted {
+                                            // User granted permission, you can handle this as needed
+                                        } else {
+                                            // User denied permission, update notificationState accordingly
+                                            notificationState = false
+                                        }
+                                    }
+                                }
                             }
-                       
+                            .disabled(notificationAuthorizationStatus == .denied)
                     }
                     Text("Notification will pop-up one week, one day, one hour before the scheduled date")
                         .font(.custom("Aldrich-Regular", size: 10))
