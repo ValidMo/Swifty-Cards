@@ -10,9 +10,16 @@
 import SwiftUI
 import Charts
 
+
+
 struct CardChartView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
+        
         Text("This will be chart view")
+            .foregroundColor(colorScheme == .dark ? .green : .yellow)
     }
 }
 

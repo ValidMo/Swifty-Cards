@@ -9,9 +9,9 @@ struct ContentView: View {
     @State var CardDeletedNotification: Bool = false
     @State private var selectedTab: Int = 1
     
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor(.white)
-    }
+    
+    
+    
     
     var body: some View {
         
@@ -27,11 +27,7 @@ struct ContentView: View {
             )
             .tabItem {
                 Label("Wallet", systemImage: "creditcard.circle.fill")
-//                VStack {
-////                       Image(systemName: "person.circle")
-//                       Text("Profile")
-//                        .font(.custom("Aldrich-Regular", size: 10))
-//                   }
+
             }
             .tag(1)
         
@@ -53,6 +49,7 @@ struct ContentView: View {
             .tag(3)
   
             }
+        .toolbarBackground(.automatic, for: .tabBar)
             
             .overlay(
                 VStack{

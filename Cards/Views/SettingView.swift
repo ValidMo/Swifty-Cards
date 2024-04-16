@@ -9,12 +9,36 @@ import SwiftUI
 import MessageUI
 
 struct SettingView: View {
+    /*
+    private func toggleAppearanceMode() {
+           if darkModeStatus {
+               UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
+           } else {
+               UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+           }
+       }
+     */
+    
+   
+    @AppStorage("isDarkMode") private var darkModeStatus: Bool = false
+    
+    
+    private func toggleAppearanceMode() {
+          guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+          let window = windowScene.windows.first
+
+          UserDefaults.standard.set(darkModeStatus, forKey: "darkModeEnabled")
+          if darkModeStatus {
+              window?.overrideUserInterfaceStyle = .dark
+          } else {
+              window?.overrideUserInterfaceStyle = .light
+          }
+      }
+   
     
    
     
-    
-    
-    @State private var darkModeStatus: Bool = false
+   //@State private var darkModeStatus: Bool = false
     @State private var notificationStatus: Bool = false
     @State private var showAboutUsView: Bool = false
     @State private var feedbackStatus: Bool = false
@@ -29,10 +53,14 @@ struct SettingView: View {
             Toggle("Dark Mode", isOn: $darkModeStatus)
                 .padding()
                 .font(.custom("Aldrich-Regular", size: 25))
+              
          
             Toggle("Notification", isOn: $notificationStatus)
                 .padding()
                 .font(.custom("Aldrich-Regular", size: 25))
+                .onChange(of: darkModeStatus) { _ in
+                                    toggleAppearanceMode()
+                                }
             
             
             Divider()
@@ -80,3 +108,4 @@ struct SettingView: View {
 //        SettingView(darkModeStatus: true, notificationStatus: true)
 //    }
 //}
+
