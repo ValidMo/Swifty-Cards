@@ -23,6 +23,8 @@ struct SegmentedView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
+           
+            
             
             VStack {
                 
@@ -41,3 +43,10 @@ struct SegmentedView: View {
         }
     }
 }
+
+struct SegmentedView_Previews: PreviewProvider {
+    static var previews: some View {
+        SegmentedView(selectedTab: .constant(0))
+    }
+}
+
