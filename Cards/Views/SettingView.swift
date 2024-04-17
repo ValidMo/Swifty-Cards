@@ -33,8 +33,10 @@ struct SettingView: View {
             
             Divider()
     
-            Button("Feed us back") {
-                print("Nothing yet")
+            Button(action: {
+                sendEmail()
+            }) {
+                Text("Feed us back")
             }
             .padding()
             .font(.custom("Aldrich-Regular", size: 25))

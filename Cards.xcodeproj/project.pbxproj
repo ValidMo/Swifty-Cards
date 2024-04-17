@@ -11,6 +11,7 @@
 		0D6E20DD2ABA089000D9F8FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6E20DC2ABA089000D9F8FD /* Color.swift */; };
 		0D6E20E02ABA0F6400D9F8FD /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = 0D6E20DF2ABA0F6400D9F8FD /* Todo */; };
 		0D74B0B32AB9D3AB00AA344B /* Aldrich-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DA6FCC52AB9ACBF0067C9DF /* Aldrich-Regular.ttf */; };
+		0D94253F2BCFB864007C1BC6 /* mailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94253E2BCFB864007C1BC6 /* mailSender.swift */; };
 		0DA6FC912AB99DD00067C9DF /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6FC902AB99DD00067C9DF /* CardsApp.swift */; };
 		0DA6FC932AB99DD00067C9DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6FC922AB99DD00067C9DF /* ContentView.swift */; };
 		0DA6FC952AB99DD20067C9DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA6FC942AB99DD20067C9DF /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		0D6E20DC2ABA089000D9F8FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0D6E20DF2ABA0F6400D9F8FD /* Todo */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		0D74B0B22AB9C9E300AA344B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D94253E2BCFB864007C1BC6 /* mailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailSender.swift; sourceTree = "<group>"; };
 		0DA6FC8D2AB99DD00067C9DF /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA6FC902AB99DD00067C9DF /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		0DA6FC922AB99DD00067C9DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				0DD7BF4E2ABAFA1800C1BCC7 /* Text.swift */,
 				0DAF1C2A2AC0947B0024D6A6 /* NotificationManager.swift */,
 				0DDE2F142ACAB1B700FE0F9F /* View.swift */,
+				0D94253E2BCFB864007C1BC6 /* mailSender.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				0DA6FCAB2AB99FED0067C9DF /* YesterdaysTransactionsView.swift in Sources */,
 				0DA6FCAF2AB9A16D0067C9DF /* AddFutureTransactionView.swift in Sources */,
 				0DA6FCD92AB9B5E50067C9DF /* NSColorTransformer.swift in Sources */,
+				0D94253F2BCFB864007C1BC6 /* mailSender.swift in Sources */,
 				0DA6FC912AB99DD00067C9DF /* CardsApp.swift in Sources */,
 				0DD7BF4F2ABAFA1800C1BCC7 /* Text.swift in Sources */,
 				0DA6FCB12AB9A1860067C9DF /* AllCardsView.swift in Sources */,
